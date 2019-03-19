@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-6">
-            {!! Form::model($task, ['route' => ['task.update', $task->id], 'method' => 'put']) !!}
+            {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
         
                 <div class="form-group">
                     {!! Form::label('content', 'タスク:') !!}

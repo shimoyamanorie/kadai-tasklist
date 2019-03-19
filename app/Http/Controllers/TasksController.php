@@ -58,7 +58,7 @@ class TasksController extends Controller
     }
 
     // putまたはpatchでtasks/idにアクセスされた場合の「更新処理」
-    public function update(Request $request, $id)
+    public function update(Request$request, $id)
     {
         $task = Task::find($id);
         $task->content = $request->content;
