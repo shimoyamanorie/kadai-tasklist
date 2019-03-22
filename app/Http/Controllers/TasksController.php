@@ -34,9 +34,9 @@ class TasksController extends Controller
             'status' => 'required|max:10',   // 追加
             'content' => 'required|max:191',
         ]);
-        
+
         $task = new Task;
-        $task->status = $request->status; 
+        $task->status = $request->status;    // 追加
         $task->content = $request->content;
         $task->save();
 
@@ -66,13 +66,13 @@ class TasksController extends Controller
     // putまたはpatchでtasks/idにアクセスされた場合の「更新処理」
     public function update(Request$request, $id)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'status' => 'required|max:10',   // 追加
             'content' => 'required|max:191',
         ]);
-        
+
         $task = Task::find($id);
-        $task->status = $request->status;  // 追加
+        $task->status = $request->status;    // 追加
         $task->content = $request->content;
         $task->save();
 

@@ -18,11 +18,6 @@ class AddStatusToTasksTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
