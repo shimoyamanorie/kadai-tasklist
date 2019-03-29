@@ -16,8 +16,11 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('content');    // content カラム追加
+            $table->integer('user_id')->unsigned()->index();
             $table->timestamps();
         });
+        // 外部キー制約
+            $table->foreign('user_id')->references('id')->on('users');
     }
 
     /**

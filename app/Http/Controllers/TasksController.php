@@ -56,9 +56,11 @@ class TasksController extends Controller
         $task = new Task;
         $task->status = $request->status;    // 追加
         $task->content = $request->content;
+        $user = \Auth::user();
+        $task->user_id = $user->id;
         $task->save();
 
-        return back();
+        return redirect('/');
     }
 
     // getでtasks/idにアクセスされた場合の「取得表示処理」
